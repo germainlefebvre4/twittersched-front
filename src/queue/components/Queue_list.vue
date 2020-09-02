@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <v-container fluid d-flex class="grid">
       <v-card v-for="queue in queues.data" :key="queue.id" class="card">
         <v-card-title>{{ queue.name | capitalize }}</v-card-title>
@@ -10,7 +11,6 @@
           </div>
         </v-card-text>
       </v-card>
-
     </v-container>
     
   </div>
@@ -26,6 +26,16 @@ export default {
     Post,
   },
 
+  data: () => ({
+  }),
+
+  methods: {
+    async saveQueue() {
+      console.log("this.queueName");
+      console.log(this.queueName, this.queueCron);
+      await postQueue(this.queueName, this.queueCron);
+    },
+  },
 
   filters: {
     capitalize: function (value) {

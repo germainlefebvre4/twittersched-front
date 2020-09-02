@@ -20,6 +20,10 @@ export default {
   name: "postList",
   props: ["posts"],
 
+  mounted() {
+  },
+  methods: {
+  },
 
   filters: {
     capitalize: function (value) {
