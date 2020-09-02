@@ -1,6 +1,19 @@
 <template>
   <div>
 
+    <v-expansion-panels accordion>
+      <v-expansion-panel
+        v-for="queue in queues.data"
+        :key="queue.id"
+      >
+        <v-expansion-panel-header>{{ queue.name | capitalize }}</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <Post :queueId="queue.id" />
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-expansion-panels>
+
+
     <v-container fluid d-flex class="grid">
       <v-card v-for="queue in queues.data" :key="queue.id" class="card">
         <v-card-title>{{ queue.name | capitalize }}</v-card-title>
