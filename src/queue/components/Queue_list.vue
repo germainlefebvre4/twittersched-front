@@ -50,6 +50,15 @@ export default {
     },
   },
 
+  mounted() {
+    if (localStorage.access_token) {
+      this.access_token = localStorage.access_token;
+    }
+    if (localStorage.refresh_token) {
+      this.refresh_token = localStorage.refresh_token;
+    }
+  },
+
   filters: {
     capitalize: function (value) {
       if (!value) return ''

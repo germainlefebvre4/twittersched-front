@@ -7,8 +7,6 @@
 <script>
 import ApplicationList from "../components/Application_list.vue";
 
-import { getApplications } from "../services/application.service";
-
 export default {
   name: "application",
   components: {
@@ -18,12 +16,8 @@ export default {
     applications: [],
   }),
   mounted() {
-    this.fetchApps();
   },
   methods: {
-    async fetchApps() {
-      this.applications = await getApplications();
-    },
   },
 };
 </script>

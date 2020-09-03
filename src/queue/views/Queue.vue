@@ -32,14 +32,14 @@
               <v-col cols="12">
                 <v-text-field
                   v-model="queueName"
-                  label="Titre*"
+                  label="Name*"
                   required
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
                   v-model="queueCron"
-                  label="Message*"
+                  label="Cron*"
                   required
                 ></v-text-field>
               </v-col>
@@ -68,7 +68,7 @@
       </v-card>
     </v-dialog>    
 
-
+    {{ access_token }}
     <QueueList :queues="queues" />
   </div>
 </template>
@@ -90,6 +90,8 @@ export default {
     queueName: "",
     queueCron: "",
     dialog: false,
+    access_token: "",
+    refresh_token: "",
   }),
   mounted() {
     this.fetchApps();
